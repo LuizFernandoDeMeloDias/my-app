@@ -75,3 +75,9 @@ rowNumber={fazeres.rowNumber}, rowDescription={fazeres.rowDescription}, rowDesig
 
 Essas são as props que estão sendo passadas para o componente AfazerRowItem.
 Estão sendo extraídas do objeto fazeres para que cada componente AfazerRowItem tenha as propriedades corretas de acordo com o objeto atual no array fazeres.
+
+
+Estudar:
+  - Estruturar uma array 
+  - ganchos React 
+  - função de Seta 
