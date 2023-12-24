@@ -1,0 +1,77 @@
+Componentes -> ão como peças de Lego reutilizáveis para construir a sua interface. Um componente pode ser um botão, uma caixa de texto, ou até mesmo algo mais complexo como um cabeçalho ou um formulário.
+
+Props (Propriedades): Permitem que você passe dados de um componente pai para um componente filho. Isso torna os componentes mais flexíveis e reutilizáveis.
+
+----------------------------------------------------------------
+
+// Importa um componente chamado 'NomeDoComponente' de algum 'Diretorio'
+import NomeDoComponente from 'Diretorio';
+
+// Define uma função chamada 'Funcao' que aceita 'props' como argumento
+function Funcao(props) {
+  // Contém o que estará dentro da função
+  return (
+    <div>
+      {/* Conteúdo da função */}
+      Coisas que estarão dentro da função
+
+      {/* Chama o componente 'NomeDoComponente' dentro da função */}
+      <NomeDoComponente />
+    </div>
+  );
+}
+
+// Exporta 'Funcao' como o valor padrão deste arquivo
+export default Funcao;
+
+----------------------------------------------------------------
+
+
+import AfazerRowItem from "./AFazerRowItem"
+
+function TodoTable(props){
+return(
+<table className="table table-hover">
+    <thead>
+        <th scope="col">#</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">rowDesignado</th>
+    </thead>
+    <tbody>
+        {props.fazeres.map(fazeres  => (
+            <AfazerRowItem 
+                rowNumber = {fazeres.rowNumber}
+                rowDescription = {fazeres.rowDescription}
+                rowDesignado = {fazeres.rowDesignado}
+            />
+        ))}
+    </tbody>
+</table>
+
+);
+
+}
+export default TodoTable
+------------------------------------------------------------------
+
+Essa é uma expressão JSX que mapeia um array chamado fazeres, que está sendo passado como uma propriedade chamada fazeres para o componente atual. Aqui está uma explicação passo a passo:
+
+props.fazeres:
+
+props é um objeto que contém todas as propriedades passadas para o componente.
+fazeres é o nome de uma propriedade específica que foi passada para este componente. Pode-se imaginar que props.fazeres contém um array de objetos.
+map:
+
+map é uma função de array em JavaScript que permite percorrer cada elemento do array e realizar uma operação para cada elemento.
+No código, props.fazeres.map está sendo usado para percorrer cada objeto no array fazeres.
+fazeres => ():
+
+Este é um arrow function (função de seta) que recebe um parâmetro chamado fazeres. Esse parâmetro representa cada objeto no array fazeres.
+<AfazerRowItem ... />:
+
+Dentro do corpo da função de mapeamento, você está renderizando um componente chamado AfazerRowItem para cada objeto no array fazeres.
+AfazerRowItem parece ser um componente que recebe três propriedades: rowNumber, rowDescription e rowDesignado.
+rowNumber={fazeres.rowNumber}, rowDescription={fazeres.rowDescription}, rowDesignado={fazeres.rowDesignado}:
+
+Essas são as props que estão sendo passadas para o componente AfazerRowItem.
+Estão sendo extraídas do objeto fazeres para que cada componente AfazerRowItem tenha as propriedades corretas de acordo com o objeto atual no array fazeres.

@@ -9,20 +9,13 @@ return(
         <th scope="col">rowDesignado</th>
     </thead>
     <tbody>
-              <AfazerRowItem 
-              rowNumber={props.fazeres[0].rowNumber} 
-              rowDescription={props.fazeres[0].rowDescription} 
-              rowDesignado={props.fazeres[0].rowDesignado} />
-              
-              <AfazerRowItem 
-              rowNumber={props.fazeres[1].rowNumber} 
-              rowDescription={props.fazeres[1].rowDescription} 
-              rowDesignado={props.fazeres[1].rowDesignado} />
-
-              <AfazerRowItem 
-              rowNumber={props.fazeres[2].rowNumber} 
-              rowDescription={props.fazeres[2].rowDescription} 
-              rowDesignado={props.fazeres[2].rowDesignado} />
+        {props.fazeres.map(fazeres  => (
+            <AfazerRowItem 
+                rowNumber = {fazeres.rowNumber}
+                rowDescription = {fazeres.rowDescription}
+                rowDesignado = {fazeres.rowDesignado}
+            />
+        ))}
     </tbody>
 </table>
 
