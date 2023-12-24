@@ -1,6 +1,16 @@
 import './App.css';
+import TodoTable from './componentes/TodoTable';
+
 
 function App() {
+
+const fazeres = [
+  {rowNumber: 1, rowDescription: 'Alimentar o Gato', rowDesignado: 'Lulu'},
+  {rowNumber: 2, rowDescription: 'Regar o cacto', rowDesignado: 'EUa'},
+  {rowNumber: 3, rowDescription: 'Matar alguém', rowDesignado: 'EU'}
+]
+
+
   return (
     <div className='mt-5 container'>
       <div className='card'>
@@ -8,27 +18,7 @@ function App() {
           Your Todo's
         </div>
         <div className='card-body'>
-          <table className='table table-hover'>
-            <thead>
-              <tr>
-                <th scope='col'>#</th>
-                <th scope='col'>Descripition</th>
-                <th scope='col'>Asigned</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope='row'>1</th>
-                <td>Feed dog</td>
-                <td> Eric</td>
-              </tr>
-              <tr>
-                <th scope='row'>2</th>
-                <td>Get haircut</td>
-                <td>Eric</td>
-              </tr>
-            </tbody>
-          </table>
+          <TodoTable fazeres={fazeres}/>
         </div>
       </div>
     </div>
